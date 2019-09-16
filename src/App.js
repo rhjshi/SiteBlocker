@@ -13,6 +13,7 @@ class App extends React.Component {
     this.localStorage = require('local-storage');
     // put in example site
     this.localStorage("*://*.youtube.com/", 10);
+    this.localStorage('test', 'This has worked');
 
     // needed to properly use 'this' in function
     this.submitSite = this.submitSite.bind(this);
@@ -20,11 +21,11 @@ class App extends React.Component {
 
   //this is in the context where
   handleInputChange = (event)=>{
-    this.setState({inputField : event.target.value})
+    this.setState({inputField : event.target.value});
   }
 
   clearSites = () => {
-
+    alert(this.localStorage('foo'))
   }
 
   //this is defined as what called it
